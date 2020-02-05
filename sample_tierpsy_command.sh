@@ -1,0 +1,8 @@
+'/Users/dylan/anaconda/anaconda3/envs/tierpsy/bin/python' 
+'/Users/dylan/anaconda/anaconda3/envs/tierpsy/lib/python3.6/site-packages/tierpsy/processing/ProcessLocal.py' '/Users/dylan/src/behaviour-analysis-pipeline/data-test/test.avi' 
+--masks_dir '/Users/dylan/src/behaviour-analysis-pipeline/data-test/MaskedVideos' 
+--results_dir '/Users/dylan/src/behaviour-analysis-pipeline/data-test/Results' 
+--tmp_mask_dir '/Users/dylan/Tmp/MaskedVideos/' 
+--tmp_results_dir '/Users/dylan/Tmp/Results/' 
+--json_file '/Users/dylan/src/behaviour-analysis-pipeline/data-test/parameters.json' 
+--analysis_checkpoints 'COMPRESS' 'TRAJ_CREATE' 'TRAJ_JOIN' 'SKE_INIT' 'BLOB_FEATS' 'SKE_CREATE' 'SKE_FILT' 'SKE_ORIENT' 'INT_PROFILE' 'INT_SKE_ORIENT' 'FEAT_INIT' 'FEAT_TIERPSY'
