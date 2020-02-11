@@ -3,7 +3,8 @@ import glob
 from tierpsy.processing.processMultipleFilesFun import processMultipleFilesFun
 from tierpsy.summary.collect import calculate_summaries
 
-path = './data/8bit-tiff-30s/'
+path = './data/jpeg-30s/'
+img_extension = "*.jpg"
 fps = 10
 masked_video_dir = path + 'MaskedVideos'
 results_dir = path + 'Results'
@@ -15,10 +16,10 @@ def sorted_tiff(f_path):
     key = tiff_name.split('.')[0]
     return int(key)
 
-tiff_files = glob.glob(path + "*.tiff")
-tiff_files.sort(key=sorted_tiff)
+img_files = glob.glob(path + img_extension)
+img_files.sort(key=sorted_tiff)
 
-images = [cv2.imread(file) for file in tiff_files]
+images = [cv2.imread(file) for file in img_files]
 width, height, layers = images[0].shape
 
 video = cv2.VideoWriter(path + "test.avi", cv2.VideoWriter_fourcc(*'XVID'), fps, (height, width))
