@@ -1,5 +1,6 @@
 import cv2
 import glob
+import os
 
 path = './data/jpeg-30s/'
 img_extension = "*.jpg"
@@ -56,10 +57,12 @@ video.release()
 
 
 
-# def sort_file_by_name_num(f_path):
-#     f_name = f_path.split('/')[-1]
-#     key = f_name.split('.')[0]
-#     return int(key)
+# def file_name_str_to_int(f_path):
+#     f_name = os.path.basename(f_path)
+
+#     str_key, _ = os.path.splitext(f_name)
+
+#     return int(str_key)
 
 
-# img_files.sort(key=sort_file_by_name_num)
+# img_files.sort(key=file_name_str_to_int)
