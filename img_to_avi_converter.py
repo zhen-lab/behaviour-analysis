@@ -1,18 +1,18 @@
 import cv2
 import glob
+import os
 
-def sorted_tiff(f_path):
-    tiff_name = f_path.split('/')[-1]
-    key = tiff_name.split('.')[0]
-    return int(key)
+def file_name_str_to_int(f_path):
+    f_name = os.path.basename(f_path)
+    str_key, _ = os.path.splitext(f_name)
+    return int(str_key)
 
-# path = './data/'
+path = './data/jpeg-30s/'
+img_extension = "*.jpg"
+fps = 10
 
-path = './data/8bit-tiff-30s/'
-frames_per_second = 10
-
-tiff_files = glob.glob(path + '*.tiff')
-tiff_files.sort(key=sorted_tiff)
+img_files = glob.glob(path + img_extension)
+img_files.sort(key=file_name_str_to_int)
 
 images = [cv2.imread(file) for file in tiff_files]
 width, height, _ = images[0].shape
