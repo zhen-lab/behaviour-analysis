@@ -1,5 +1,6 @@
 import cv2
 import glob
+import os
 from tierpsy.processing.processMultipleFilesFun import processMultipleFilesFun
 from tierpsy.summary.collect import calculate_summaries
 
@@ -11,13 +12,14 @@ results_dir = path + 'Results'
 parameters_file = path + 'parameters.json'
 
 
-def sorted_tiff(f_path):
-    tiff_name = f_path.split('/')[-1]
-    key = tiff_name.split('.')[0]
-    return int(key)
+def file_name_str_to_int(f_path):
+    f_name = os.path.basename(f_path)
+    str_key, _ = os.path.splitext(f_name)
+    return int(str_key)
+
 
 img_files = glob.glob(path + img_extension)
-img_files.sort(key=sorted_tiff)
+img_files.sort(key=file_name_str_to_int)
 
 images = [cv2.imread(file) for file in img_files]
 width, height, layers = images[0].shape
