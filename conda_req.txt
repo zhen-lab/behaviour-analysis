@@ -30,7 +30,7 @@ https://conda.anaconda.org/conda-forge/osx-64/libprotobuf-3.11.3-hd174df1_0.tar.
 https://conda.anaconda.org/conda-forge/osx-64/lz4-c-1.8.3-h6de7cb9_1001.tar.bz2
 https://conda.anaconda.org/conda-forge/osx-64/ncurses-6.1-h0a44026_1002.tar.bz2
 https://conda.anaconda.org/conda-forge/osx-64/openh264-1.8.0-hd9629dc_1000.tar.bz2
-https://repo.anaconda.com/pkgs/main/osx-64/openssl-1.1.1d-h1de35cc_3.tar.bz2
+https://repo.anaconda.com/pkgs/main/osx-64/openssl-1.1.1d-h1de35cc_4.conda
 https://conda.anaconda.org/conda-forge/osx-64/pcre-8.43-h4a8c4bd_0.tar.bz2
 https://conda.anaconda.org/conda-forge/osx-64/tk-8.6.10-hbbe82c9_0.tar.bz2
 https://conda.anaconda.org/conda-forge/osx-64/freetype-2.10.0-h24853df_1.tar.bz2
@@ -110,6 +110,7 @@ https://conda.anaconda.org/conda-forge/osx-64/statsmodels-0.11.0-py36h0b31af3_0.
 https://conda.anaconda.org/conda-forge/osx-64/tensorflow-1.0.0-py36_0.tar.bz2
 https://conda.anaconda.org/conda-forge/osx-64/keras-2.1.5-py36_0.tar.bz2
 https://conda.anaconda.org/conda-forge/osx-64/py-opencv-4.2.0-py36h5ca1d4c_2.tar.bz2
+https://repo.anaconda.com/pkgs/main/noarch/seaborn-0.10.0-py_0.conda
 https://conda.anaconda.org/conda-forge/osx-64/urllib3-1.25.7-py36_0.tar.bz2
 https://conda.anaconda.org/conda-forge/osx-64/opencv-4.2.0-py36_2.tar.bz2
 https://conda.anaconda.org/conda-forge/osx-64/requests-2.22.0-py36_1.tar.bz2
