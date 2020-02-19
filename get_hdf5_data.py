@@ -1,29 +1,10 @@
-import h5py
 import glob
 import pandas as pd
-
-# hdf5_data_directory = './data/jpeg-30s/Results/'
-
-# hdf5_files = glob.glob(hdf5_data_directory + '*.hdf5')
-
-
-# for hdf5_file in hdf5_files:
-#     with h5py.File(hdf5_file, 'r') as f_content:
-#         print(f_content.keys())
-    
-
+import seaborn as sns; sns.set()
+import matplotlib.pyplot as plt
 
 hdf5_file = './data/jpeg-30s/Results/test_featuresN.hdf5'
 
-# with h5py.File(hdf5_file, 'r') as f:
-#     print(f.get('timeseries_data'))
-#     print(f.get('timeseries_data').items())
-
-# f = pd.read_hdf({
-#     'path_or_buf': hdf5_file,
-#     'key': 'timeseries_data',
-#     # 'where': ['coor']
-# })
 
 f = pd.read_hdf(hdf5_file, 'timeseries_data', 'r', columns=[
     'curvature_head',
@@ -35,5 +16,15 @@ f = pd.read_hdf(hdf5_file, 'timeseries_data', 'r', columns=[
 
 f.to_csv('./data/tierpsy_features.csv')
 
-# print(f['curvature_head'])
-print( f['curvature_head'].__class__.__name__)
+curvature_keys = [    
+    'curvature_head',
+    'curvature_neck',
+    'curvature_midbody',
+    'curvature_hips',
+    'curvature_tail'
+]
+
+data = { k: f[k][:499] for k in curvature_keys }
+df = pd.DataFrame(data=data)
+ax = sns.heatmap(df.transpose(), center=0.0, cmap=sns.diverging_palette(220, 20, n=3, as_cmap=True))
+plt.show()

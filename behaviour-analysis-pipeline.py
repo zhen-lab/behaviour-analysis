@@ -1,6 +1,7 @@
 import cv2
 import glob
 import os
+import shutil
 from tierpsy.processing.processMultipleFilesFun import processMultipleFilesFun
 from tierpsy.summary.collect import calculate_summaries
 
@@ -10,6 +11,13 @@ fps = 10
 masked_video_dir = path + 'MaskedVideos'
 results_dir = path + 'Results'
 parameters_file = path + 'parameters.json'
+
+
+try:
+    shutil.rmtree(masked_video_dir)
+    shutil.rmtree(results_dir)
+except OSError as e:
+    print("error couldnt delete files")
 
 
 def file_name_str_to_int(f_path):
