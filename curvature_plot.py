@@ -19,8 +19,8 @@ def curvature_plot_from_tierpsy_features_func():
         plt.show()
 
 
-def curvature_plot_from_tierpsy_hdf5():
-    f = pd.read_hdf('./data/jpeg-30s/Results/test_featuresN.hdf5', 'timeseries_data', 'r', columns=[
+def curvature_plot_from_tierpsy_hdf5(hdf5_path):
+    f = pd.read_hdf(hdf5_path, 'timeseries_data', 'r', columns=[
         'curvature_head',
         'curvature_neck',
         'curvature_midbody',
@@ -44,8 +44,8 @@ def curvature_plot_from_tierpsy_hdf5():
 
 
 
-def curvature_plot_from_taizo_data():
-    f = pd.read_csv('./data/sample-curvature-data/temp1HR1.csv')
+def curvature_plot_from_taizo_data(csv_path):
+    f = pd.read_csv(csv_path)
     angle_columns = [ 'angle_' + str(i) for i in range(1, 34) ]
 
     data = { k: f[k] for k in angle_columns }
@@ -55,5 +55,5 @@ def curvature_plot_from_taizo_data():
 
 
 # curvature_plot_from_tierpsy_features_func()
-# curvature_plot_from_tierpsy_hdf5()
-curvature_plot_from_taizo_data()
+# curvature_plot_from_tierpsy_hdf5('./data/taizo-vs-tierpsy/images/Results/test_featuresN.hdf5')
+curvature_plot_from_taizo_data('./data/taizo-vs-tierpsy/temp34HR1.csv')
