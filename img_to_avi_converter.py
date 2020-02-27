@@ -16,9 +16,9 @@ img_files = sorted(glob.glob(path + img_extension))
 img_files.sort(key=file_name_str_to_int)
 
 images = [cv2.imread(file) for file in img_files]
-width, height, _ = images[0].shape
+height, width, _ = images[0].shape
 
-video = cv2.VideoWriter(video_file_name, cv2.VideoWriter_fourcc(*'XVID'), frames_per_second, (height, width))
+video = cv2.VideoWriter(video_file_name, cv2.VideoWriter_fourcc(*'XVID'), frames_per_second, (width, height))
 
 for img in images:
     video.write(img)
