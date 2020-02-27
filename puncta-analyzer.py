@@ -13,6 +13,9 @@ p = './data/puncta/'
 fname = 'subtracted'
 fname_ext = '.tif'
 
+# we use tifffile instead of cv2.imread, skimage.imread because 
+# tifffile handles loading 16-bit tiff files, while cv2, skimage assume
+# they will be 8-bit tiff files
 puncta_img = tifffile.imread(p + fname + fname_ext)
 
 # a puncta is a row of tuples containing (x, y, sigma)

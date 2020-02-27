@@ -5,19 +5,26 @@ import os
 path = './data/jpeg-30s/'
 img_extension = "*.jpg"
 fps = 10
+video_file_name = path + "test.avi"
+
 
 img_files = glob.glob(path + img_extension)
 
+
+
 images = [cv2.imread(file) for file in img_files]
 
-video_width, video_height, _ = images[0].shape
+
+
+video_height, video_width, _ = images[0].shape
+
+
 
 video = cv2.VideoWriter(
-  path + "test.avi",
+  video_file_name,
   cv2.VideoWriter_fourcc(*"XVID"),
-  # -1,
   fps,
-  (video_height, video_width))
+  (video_width, video_height))
 
 for image in images:
   video.write(image)
