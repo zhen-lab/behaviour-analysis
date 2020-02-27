@@ -8,6 +8,10 @@ from math import sqrt
 from skimage import feature
 from skimage.color import rgb2gray
 
+# A program to recognize puncta in an image 
+# see https://scikit-image.org/docs/stable/auto_examples/features_detection/plot_blob.html#sphx-glr-auto-examples-features-detection-plot-blob-py
+# for more detail
+
 
 p = './data/puncta/'
 fname = 'subtracted'
