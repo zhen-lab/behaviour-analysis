@@ -1,5 +1,5 @@
 # behaviour-analysis
-Analyze data taken from [TrackStim](https://github.com/zhen-lab/TrackStim)
+Analyze data taken from [TrackStim](https://github.com/zhen-lab/TrackStim) (and potentially other worm recordings)
 
 ## Installation
 1. Install anaconda
